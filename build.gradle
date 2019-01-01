@@ -27,6 +27,8 @@ dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     //compile 'com.google.guava:guava:23.0'
 
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
     // Use JUnit test framework
     //testCompile 'junit:junit:4.12'
 }
