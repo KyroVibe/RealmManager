@@ -63,7 +63,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\RealmManager.jar;%APP_HOME%\lib\NeospaceStream-0.1.0.jar
+set CLASSPATH=%APP_HOME%\lib\RealmManager.jar;%APP_HOME%\lib\NeospaceStream-0.1.5.jar
 
 @rem Execute RealmManager
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %REALM_MANAGER_OPTS%  -classpath "%CLASSPATH%" core.Server %CMD_LINE_ARGS%

@@ -27,6 +27,8 @@ public class Server {
         // Soft Code Varibles
         realms.add(new RealmInfo("DEFAULT", "76.105.136.144"));
 
+        System.out.println("--- Realm Manager v1.0.0 ---");
+
         try {
 
             me = new ServerSocket(7200);
@@ -36,11 +38,13 @@ public class Server {
                 NeoReader reader = new NeoReader(s.getInputStream());
                 NeoWriter writer = new NeoWriter(s.getOutputStream());
                 String a = reader.Read();
-                writer.Write(HostnameViaName(a));
+                String host = HostnameViaName(a);
+                writer.Write(host);
                 writer.Flush();
                 reader.Close();
                 writer.Close();
                 s.close();
+                System.out.println("Connected Client to Realm '" + a + "' at '"  + host + "'");
             }
 
             me.close();
@@ -51,11 +55,21 @@ public class Server {
     }
 
     public String HostnameViaName(String name) {
+        //name = name.replaceAll("\n", "a");
+        //System.out.println("'" + name + "'");
+        
+        //System.out.println(name.length());
+        //System.out.println(realms.size());
         for (int i = 0; i < realms.size(); i++) {
+            //System.out.println("'" + realms.get(i).realmName + "'");
             if (realms.get(i).realmName.equals(name)) {
                 return realms.get(i).hostname;
+            } else {
+                //System.out.println("'" + realms.get(i).realmName + "' doesn't equal '" + name + "'");
             }
         }
+
+        //System.out.println("Welp Fuck");
 
         return "null";
     }

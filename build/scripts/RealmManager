@@ -64,7 +64,7 @@ case "`uname`" in
     ;;
 esac
 
-CLASSPATH=$APP_HOME/lib/RealmManager.jar:$APP_HOME/lib/NeospaceStream-0.1.0.jar
+CLASSPATH=$APP_HOME/lib/RealmManager.jar:$APP_HOME/lib/NeospaceStream-0.1.5.jar
 
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then

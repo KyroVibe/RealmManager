@@ -19,7 +19,8 @@ mainClassName = 'core.Server'
 
 jar {
     manifest {
-        attributes('Main-Class' : 'core.Server')
+        attributes('Main-Class' : 'core.Server',
+                'Class-Path' : 'libs/NeospaceStream-0.1.5.jar')
     }
 }
 
